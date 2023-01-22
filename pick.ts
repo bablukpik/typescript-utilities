@@ -1,9 +1,14 @@
-interface IUser {
+interface User {
   name: string;
   age: number;
   email: string;
 }
 
-type TUserData = Pick<IUser, 'name' | 'email'> & { role: string; roleId: number };
+type UserData = Pick<User, 'name' | 'email'> & { role: string; roleId: number };
 
-const obj: TUserData = { name: '', role: '', roleId: 1, email: '', }
+const obj: UserData = {
+  name: 'Bablu Ahmed',
+  role: 'Super Admin',
+  roleId: 1,
+  email: 'example@mail.com',
+};
