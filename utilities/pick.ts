@@ -8,13 +8,28 @@ interface User {
   email: string;
 }
 
+/**
+ * * Example 1
+ */
+
+type UserWithNameAndEmail = Pick<User, 'name' | 'email'>;
+
+const obj: UserWithNameAndEmail = {
+  name: 'Bablu Ahmed',
+  email: 'example@example.com',
+};
+
+/**
+ * * Example 2
+ */
+
 type UserData = Pick<User, 'name' | 'email'> & { role: string; roleId: number };
 
-const obj: UserData = {
+const obj2: UserData = {
   name: 'Bablu Ahmed',
   role: 'Super Admin',
   roleId: 1,
-  email: 'example@mail.com',
+  email: 'example@example.com',
 };
 
 export { };
