@@ -1,5 +1,5 @@
 /**
- * * The Extract utility type lets us check a union type for a specific members, and returns a new type based on what is left over. It's quite similar in format to the Exclude type.
+ * * The "Extract" utility type lets us check a union type for a specific members, and returns a new type based on what is left over. It's the opposite type of the "Exclude" type.
  *
  * * Syntax: Extract<Type, ExtractedMembers>
  */
