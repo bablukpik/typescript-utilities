@@ -3,7 +3,7 @@
  */
 
 /**
- * * Example 1
+ * * Example
  */
 
 interface User {
@@ -11,6 +11,9 @@ interface User {
   age: number;
 }
 
-const user: User = {
-  
-}
+const user: Readonly<User> = {
+  name: 'John',
+  age: 36,
+};
+
+// user.age = 35; // Error: Cannot assign to 'age' because it is a read-only property
