@@ -15,12 +15,31 @@ type SomeTypeWithoutDef = Exclude<SomeType, 'def'>
  * * Example 2
  */
 
-enum Animal {
-  Dog,
-  Cat,
-  Fish
+enum MimeTypes {
+  Jpg = 'JPG',
+  Jpeg = 'JPEG',
+  Png = 'PNG',
+  Pdf = 'PDF'
 }
 
-type WithoutFish = Exclude<Animal, Animal.Fish>;
+type ExcludedUnionType = Exclude<MimeTypes, MimeTypes.Jpg | MimeTypes.Png>;
+
+/**
+ * * Example 3
+ */
+
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+type UserDataKeys = Exclude<keyof User, 'email'>;
+type UserDataValues = string | number;
+
+const user: Record<UserDataKeys, UserDataValues> = {
+  name: 'Bablu Ahmed',
+  age: 30,
+};
 
 export { };
