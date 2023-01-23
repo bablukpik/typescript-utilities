@@ -26,12 +26,12 @@ type ExtractedUnionType = Extract<Direction, Direction.Up | Direction.Down>;
 
 interface Animation {
   animationDirection: ExtractedUnionType;
-  age: number;
+  animationDuration: number;
 }
 
 const testObj: Animation = {
   animationDirection: Direction.Down,
-  age: 10,
+  animationDuration: 0.7,
 };
 
 /**
