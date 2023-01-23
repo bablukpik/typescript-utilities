@@ -18,5 +18,6 @@ module.exports = {
     rules: {
         'no-unused-vars': 0,
         'max-len': ['error', { 'ignoreComments': true }],
+        'no-shadow': 'off',
     },
 };

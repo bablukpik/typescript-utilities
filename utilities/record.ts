@@ -1,11 +1,11 @@
 /**
- ** The "Record" utility allows you to create an object with a set of properties. This can be useful for creating object maps or dictionaries.
-
- ** The syntax is Record<Type of Keys, Type of Values>
+ * * The "Record" utility allows you to create an object with a set of properties. This can be useful for creating object maps or dictionaries.
+ *
+ * * Syntax: Record<TypeOfKeys, TypeOfValues>
 */
 
 /**
- ** Example 1
+ * * Example 1
  */
 
 // type ThreeStringProps = { [key: string]: string };
@@ -19,7 +19,7 @@ const obj: ThreeStringProps = {
 };
 
 /**
-** Example 2
+* * Example 2
 */
 
 interface CatInfo {
@@ -36,7 +36,7 @@ const cats: Record<CatName, CatInfo> = {
 };
 
 /**
- ** Example 3
+ * * Example 3
  */
 
 type Statuses = 'failed' | 'complete';
