@@ -12,3 +12,5 @@ const obj: UserData = {
   roleId: 1,
   email: 'example@mail.com',
 };
+
+export { };
