@@ -4,7 +4,8 @@ Let’s boost our code quality with TypeScript’s utility types.
 
 ## How to run `.ts` File in the Terminal
 
-Here is an example of how you can run your `.ts` file in the terminal `npx ts-node utilities/extract.ts utilities/omit.ts` or `npx tsc utilities/extract.ts, utilities/omit.ts`
+* First install the necessary dependencies by running `npm install`
+* Here is an example of how you can run your `.ts` files in the terminal `npx ts-node utilities/extract.ts utilities/omit.ts`
 
 ## Naming Convention
 
