@@ -1,5 +1,5 @@
 /**
- * * The "Record" utility allows you to create an object with a set of properties. This can be useful for creating object maps or dictionaries.
+ * * The Record utility allows you to create an object with a set of properties. This can be useful for creating object maps or dictionaries.
  *
  * * Syntax: Record<TypeOfKeys, TypeOfValues>
 */

@@ -1,5 +1,5 @@
 /**
- * * The "Partial" utility allows you to make all properties of an object optional. This can be useful for creating partial objects or for handling missing data.
+ * * The Partial utility allows you to make all properties of an object optional. This can be useful for creating partial objects or for handling missing data.
  */
 
 /**
@@ -32,3 +32,5 @@ const originalPerson = {
 // let's now update the original person
 
 const updatedPerson = updatePerson(originalPerson, { name: 'Bablu Ahmed' });
+
+export { };

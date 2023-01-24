@@ -1,5 +1,5 @@
 /**
- * * The "Pick" utility allows you to create a new type from an existing one by selecting only certain properties. This can be useful for creating smaller, more specific types.
+ * * The Pick utility allows you to create a new type from an existing one by selecting only certain properties. This can be useful for creating smaller, more specific types.
  */
 
 interface User {

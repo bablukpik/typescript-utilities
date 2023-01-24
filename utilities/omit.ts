@@ -1,5 +1,5 @@
 /**
- * * The "Omit" utility type creates a new type that has all the properties of the original type except for the specified ones to omit. It's the opposite type of the "Pick" type.
+ * * The Omit utility type creates a new type that has all the properties of the original type except for the specified ones to omit. It's the opposite of Pick.
  */
 
 interface User {

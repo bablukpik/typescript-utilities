@@ -1,7 +1,7 @@
 /**
  * * The Exclude utility type lets us exclude certain members from an already defined union type. That means we can take an existing type, and remove items from it for specific situations.
  *
- * * Syntax: Exclude<UnionType, ExcludedMembers>
+ * * Syntax: Exclude<UnionType or EnumType, ExcludedMembers>
  */
 
 /**
