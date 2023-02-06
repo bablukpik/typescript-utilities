@@ -1,11 +1,11 @@
 /**
  * * The Awaited utility type lets us recursively unwrap any Promises until it hits a non-promise.
  *
- * * For Example:
+ * * In detail:
  *
  * * The Awaited type will create a string type for `string` or a `Promise<string>` or a `Promise<Promise<string>>` or a `Promise<Promise<Promise<string>>>`. That means that it removes any number of Promise wrappers.
 *
-* * If we write const x = await y, then the generic type of x will be Awaited<typeof y> but if we use ReturnType<typeof y> that will return a type with promises.
+* * If we write const x = await y, then the generic type of x will be Awaited<T>, and the type T means `typeof y` or simply Awaited<typeof y> but if we use ReturnType<typeof y> that will return a type with promises.
 *
 * * It returns an accurate return type for Promise.all, Promise.race, Promise.allSettled, and Promise.any
 
@@ -19,6 +19,7 @@
 
 type A1 = Awaited<string>; // type A1 = string
 type A2 = Awaited<Promise<string>>; // type A2 = string
+type A3 = Awaited<Promise<Promise<string>>>; // type A3 = string
 
 /**
  * * Example 2
