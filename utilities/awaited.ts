@@ -1,11 +1,11 @@
 /**
- * * The Awaited utility type lets us recursively unwrap any Promises until it hits a non-promise.
+ * * The Awaited utility type lets us recursively unwrap any promises until it hits a non-promise value. If the value passed to Awaited is not a Promise, it returns the same type. This utility type can be used to infer the return type of a Promise-resolving function.
  *
  * * In detail:
  *
  * * The Awaited type will create a string type for `string` or a `Promise<string>` or a `Promise<Promise<string>>` or a `Promise<Promise<Promise<string>>>`. That means that it removes any number of Promise wrappers.
 *
-* * If we write const x = await y, then the generic type of x will be Awaited<T>, and the type T means `typeof y` or simply Awaited<typeof y> but if we use ReturnType<typeof y> that will return a type with promises.
+* * If we write const x = await y, then the generic type of x will be Awaited<T>; here, the type T means `typeof y` or simply Awaited<typeof y> but if we use ReturnType<typeof y> that will return a type with promise.
 *
 * * It returns an accurate return type for Promise.all, Promise.race, Promise.allSettled, and Promise.any
 
@@ -25,7 +25,16 @@ type A3 = Awaited<Promise<Promise<string>>>; // type A3 = string
  * * Example 2
  */
 
-// Generic Example:
+async function foo(): Promise<string> {
+  return 'hello world';
+}
+
+type FooResult1 = ReturnType<typeof foo>; //  Promise<string>
+type FooResult2 = Awaited<ReturnType<typeof foo>>; // string
+
+/**
+ * * Example 3: Here's an example of a generic function that uses Awaited
+ */
 
 // Before TypeScript version 4.5, there was a unexpected type conversion happening with Promise in a generic function.
 
@@ -52,5 +61,20 @@ const otherFunc = async () => {
 };
 
 otherFunc();
+
+// OR
+
+async function computeLogic2<T>(arg: Promise<T> | Awaited<Promise<T>>): Promise<T> {
+  const result = await arg;
+  return result;
+}
+
+const otherFunc2 = async () => {
+  const r1 = await computeLogic2('Hey, there!');
+  const r2 = await computeLogic2(Promise.resolve('Hey, there!'));
+  console.log({ r1, r2 }); // { r1: 'Hey, there!', r2: 'Hey, there!' }
+};
+
+otherFunc2();
 
 export { };
