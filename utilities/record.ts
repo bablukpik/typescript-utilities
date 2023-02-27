@@ -8,7 +8,13 @@
  * * Example 1
  */
 
-// type ThreeStringProps = { [key: string]: string };
+// type RecordOfBooleans = { [key: string]: boolean };
+type RecordOfBooleans = { [key: string]: boolean };
+
+/**
+ * * Example 2
+ */
+
 // type ThreeStringProps = { prop1: string, prop2: string, prop3: string }
 type ThreeStringProps = Record<'prop1' | 'prop2' | 'prop3', string>
 
@@ -19,7 +25,7 @@ const obj: ThreeStringProps = {
 };
 
 /**
-* * Example 2
+* * Example 3
 */
 
 interface CatInfo {
@@ -36,7 +42,7 @@ const cats: Record<CatName, CatInfo> = {
 };
 
 /**
- * * Example 3
+ * * Example 4
  */
 
 type Statuses = 'failed' | 'complete';
